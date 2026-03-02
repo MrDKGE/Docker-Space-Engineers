@@ -9,7 +9,7 @@ Run the **Windows** Space Engineers Dedicated Server on **Linux** with a browser
 ```yaml
 services:
   space-engineers:
-    image: ghcr.io/mrdkge/docker-space-engineers:latest
+    image: dkge/space-engineers:latest
     container_name: space-engineers
     ports:
       - "6080:6080"
