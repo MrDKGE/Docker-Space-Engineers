@@ -1,0 +1,15 @@
+# Persistent data directories (mounted as volumes, not needed in the image)
+data/
+
+# Git / GitHub
+.git/
+.gitignore
+.github/
+
+# Documentation (not needed in the image)
+README.md
+LICENSE
+
+# Docker files (not needed inside the image)
+.dockerignore
+docker-compose.yml

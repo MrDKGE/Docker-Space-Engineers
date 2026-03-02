@@ -1,0 +1,2 @@
+# Persistent data directories (mounted as volumes at runtime)
+data/

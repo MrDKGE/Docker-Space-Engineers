@@ -1,0 +1,15 @@
+services:
+  space-engineers:
+    build: .
+    container_name: space-engineers
+    ports:
+      - "6080:6080"       # noVNC web UI — open http://<host>:6080
+      - "27016:27016/udp" # SE game port  — players connect here
+      # - "5900:5900"     # Raw VNC — uncomment to use a native VNC client
+    environment:
+      - GUI=true                 # true = server GUI via noVNC, false = headless console mode
+      # - RESOLUTION=1280x720x24 # Virtual display resolution (increase for larger GUI)
+    volumes:
+      - ./data/server:/opt/spaceengineers     # Game installation
+      - ./data/instance:/opt/se-instance      # Saves & config
+    restart: unless-stopped
