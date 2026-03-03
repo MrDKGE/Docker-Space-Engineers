@@ -50,7 +50,7 @@ docker compose up -d --build
 
 ## Configuration
 
-Edit `docker-compose.yml` to change the following values:
+Edit `docker-compose.yml` to change these:
 
 | Variable | Default | Description |
 |----------|---------|-------------|
@@ -70,13 +70,13 @@ Edit `docker-compose.yml` to change the following values:
 | Host Path | Container Path | Contents |
 |-----------|---------------|----------|
 | `./data/server` | `/opt/spaceengineers` | Game installation |
-| `./data/instance` | `/opt/se-instance` | World saves, mods, server configuration |
+| `./data/instance` | `/opt/se-instance` | World saves, mods, server config |
 
 Back up `data/instance` regularly, it contains your world saves.
 
 ## Stopping the Server
 
-**Important:** Before stopping the container, save your world manually from the server
+**Important:** Before stopping the container, save your world manually through the server
 GUI or console. Then run:
 
 ```bash
