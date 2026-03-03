@@ -1,5 +1,10 @@
 # Space Engineers Dedicated Server — Docker (Wine + noVNC)
 
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/MrDKGE/Docker-Space-Engineers)
+[![Docker Image Version](https://img.shields.io/docker/v/dkge/space-engineers?logo=docker&label=Docker%20Hub)](https://hub.docker.com/r/dkge/space-engineers)
+[![Docker Pulls](https://img.shields.io/docker/pulls/dkge/space-engineers?logo=docker&label=Pulls)](https://hub.docker.com/r/dkge/space-engineers)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/MrDKGE/Docker-Space-Engineers/blob/main/LICENSE)
+
 Run the **Windows** Space Engineers Dedicated Server on **Linux** with a browser-accessible GUI via noVNC.
 
 ## Quick Start
@@ -30,7 +35,7 @@ docker compose up -d
 
 3. Open **http://\<your-host-ip\>:6080** in a browser to access the server GUI.
 
-On the **first start**, SteamCMD downloads the SE Dedicated Server (~3 GB). You can watch
+On the **first start**, SteamCMD downloads the SE Dedicated Server (~7 GB). You can watch
 the progress through the noVNC web UI. Subsequent starts skip this step.
 
 ### Building from source
@@ -45,7 +50,7 @@ docker compose up -d --build
 
 ## Configuration
 
-Edit `docker-compose.yml` to change these:
+Edit `docker-compose.yml` to change the following values:
 
 | Variable | Default | Description |
 |----------|---------|-------------|
@@ -65,27 +70,18 @@ Edit `docker-compose.yml` to change these:
 | Host Path | Container Path | Contents |
 |-----------|---------------|----------|
 | `./data/server` | `/opt/spaceengineers` | Game installation |
-| `./data/instance` | `/opt/se-instance` | World saves, mods, server config |
+| `./data/instance` | `/opt/se-instance` | World saves, mods, server configuration |
 
-Back up `data/` regularly — it contains your world saves.
+Back up `data/instance` regularly, it contains your world saves.
 
 ## Stopping the Server
 
-**Important:** Before stopping the container, save your world manually through the server
+**Important:** Before stopping the container, save your world manually from the server
 GUI or console. Then run:
 
 ```bash
 docker compose down
 ```
-
-## Troubleshooting
-
-| Problem | Solution |
-|---------|----------|
-| noVNC page won't load | Wait ~30 s after starting — Wine takes time to initialize |
-| Install stuck / failed | Run `docker compose logs -f` and check for errors; restart to retry |
-| Server won't start | Connect via noVNC and check the error dialog on screen |
-| GUI text is garbled | Rebuild with `docker compose build --no-cache` |
 
 ## Known Bugs
 
@@ -99,7 +95,7 @@ Contributions are welcome! Please open an issue or pull request.
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0. See [LICENSE](LICENSE) for details.
+This project is licensed under the GNU General Public License v3.0. See [LICENSE](https://github.com/MrDKGE/Docker-Space-Engineers/blob/main/LICENSE) for details.
 
 > **Disclaimer:** Space Engineers is a trademark of Keen Software House. This project is
 > not affiliated with or endorsed by Keen Software House.
